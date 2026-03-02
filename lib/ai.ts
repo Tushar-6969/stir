@@ -1,6 +1,8 @@
 // lib/ai.ts
-require("dotenv").config();
-const axios = require("axios");
+import dotenv from "dotenv";
+import axios from "axios";
+
+dotenv.config();
 
 const API_KEY = process.env.GROQ_API_KEY;
 
@@ -13,7 +15,7 @@ if (!API_KEY) {
  * @param reviews Array of audience reviews
  * @returns { summary: string, sentiment: 'positive' | 'mixed' | 'negative' }
  */
-async function summarizeSentiment(reviews: string[]) {
+export async function summarizeSentiment(reviews: string[]) {
   if (!reviews || reviews.length === 0) {
     return { summary: "No reviews available", sentiment: "mixed" };
   }
@@ -64,5 +66,3 @@ Respond in JSON format:
     return { summary: "Error fetching sentiment", sentiment: "mixed" };
   }
 }
-
-module.exports = { summarizeSentiment };

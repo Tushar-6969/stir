@@ -5,8 +5,7 @@ import { useParams, useRouter } from "next/navigation"; // ✅ added useRouter
 
 import MovieCard from "@/components/MovieCard";
 import ReviewSection from "@/components/ReviewSection";
-import SentimentBadge from "@/components/SentimentBadge";
-import Loader from "@/components/Loader";
+import { summarizeSentiment } from "@/lib/ai";import Loader from "@/components/Loader";
 import { Movie } from "@/types/movie";
 
 export default function MoviePage() {
