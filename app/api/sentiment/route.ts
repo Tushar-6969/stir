@@ -1,6 +1,6 @@
 // app/api/sentiment/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { summarizeSentiment } from "@/lib/ai"; // <-- ES module import
+import { summarizeSentiment } from "@/lib/ai"; // <-- ES module import\
 
 export async function POST(req: NextRequest) {
   try {
